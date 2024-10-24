@@ -1,0 +1,541 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'CeraPro-Regular';
+    src: url('../fonts/CeraPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'CeraPro-Medium';
+    src: url('../fonts/CeraPro-Medium.ttf');
+}
+
+.flex {
+    display: flex;
+}
+
+/* MENU */
+
+.menu {
+    font-family: 'CeraPro-Regular',sans-serif;
+    padding: 33px 0px 27px 0px;
+    justify-content: space-around;
+    border-bottom: 1px solid #dbeddf;
+}
+
+.menu__catalogy p{
+    margin-left: 50px;
+}
+
+.menu__catalogy p:hover{
+    font-family: 'CeraPro-Medium', sans-serif;
+    cursor: pointer;
+    border-bottom: 3px solid #46A358;
+}
+
+.menu__search{
+    margin-right: 30px;
+}
+
+.menu__buy {
+    margin-right: 33px;
+}
+
+.menu__login {
+    font-family: 'CeraPro-Regular', sans-serif;
+    background: none;      /* Убирает фоновый цвет */
+    border: none;          /* Убирает рамку */
+    width: 100px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+.menu__login:hover{
+    cursor: pointer;
+}
+
+.menu__login p::before{
+    content: url('../img/icons/menu/login.svg');
+    position: absolute;
+    left: 5px;
+}
+
+
+/* MAIN */
+
+
+.main {
+    font-family: 'CeraPro-Regular', sans-serif;
+    justify-content: space-around;
+    background-color: #F5F5F580;
+}
+
+.main__welcome {
+    padding-top: 68px;
+}
+.main__title {
+    font-family: 'CeraPro-Medium', sans-serif;
+    font-size: 70px;
+}
+
+.main__title span{
+    color: #46a358;
+}
+.main__description {
+    color: #727272;
+    line-height: 24px;
+}
+
+.main__button{
+    margin-top: 55px;
+}
+
+.main__button button{
+    font-family: 'CeraPro-Regular', sans-serif;
+    background: none;      /* Убирает фоновый цвет */
+    border: none;          /* Убирает рамку */
+    width: 100px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+.main__button button:hover{
+    cursor: pointer;
+}
+
+.main__right img{
+    height: 800px;
+}
+
+
+
+/* PLANETS */
+
+
+.planets {
+    font-family: 'CeraPro-Regular', sans-serif;
+    margin-top: 26px;
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-areas: 
+    'sidebar category'
+    'sidebar catalogy';
+    grid-template-columns: 310px 1fr;
+}
+.planets__category {
+    display: flex; /* Измените с grid на flex */
+    justify-content: space-around; /* Размещает элементы по краям */
+    align-items: center; /* Выравнивает по вертикали */
+}
+
+
+.category__items p{
+    margin-left: 37px;
+}
+
+.category__items p:hover{
+    font-family: 'CeraPro-Medium', sans-serif;
+    cursor: pointer;
+}
+
+.planets__catalogy {
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+    grid-area: catalogy;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: 250px;
+    gap: 41px; /* Укажите нужное значение отступа */
+}
+
+.planets__catalogy img:hover{
+    cursor: pointer;
+}
+
+.planets__sidebar {
+    margin-top: 50px;
+    margin-left: 150px;
+    grid-area: sidebar;
+    font-size: 20px;
+    background-color: #FBFBFB;
+}
+
+
+.planets__sidebar li{
+    margin-top: 15px;
+    list-style-type: none;
+    position: relative;
+}
+
+.planets__sidebar li:hover{
+    font-family: 'CeraPro-Medium', sans-serif;
+    cursor: pointer;
+}
+
+.planets__sidebar li::after {
+    content: '(33)'; /* Значение по умолчанию */
+    position: absolute;
+    right: -150px;
+}
+
+.planets__sidebar li:nth-child(1)::after {
+    content: '(10)'; /* Уникальное значение для первого элемента */
+}
+
+.planets__sidebar li:nth-child(2)::after {
+    content: '(7)'; /* Уникальное значение для второго элемента */
+}
+
+.planets__sidebar li:nth-child(3)::after {
+    content: '(5)'; /* Уникальное значение для третьего элемента */
+}
+
+.planets__sidebar li:nth-child(4)::after {
+    content: '(2)'; /* Уникальное значение для четвертого элемента */
+}
+
+/* Добавьте дополнительные правила для остальных li по аналогии */
+
+
+.planets__sidebar img{
+    margin-top: 50px;
+}
+
+
+
+.planets__slider {
+    margin-top: 50px;
+    position: relative;
+    background: #f4f4f4;
+    border-radius: 8px;
+    width: 250px;
+    height: 18px;
+}
+
+output {
+    position: absolute;
+    left: -20px;
+    top: -40px;
+    padding: 7px 10px;
+    background: #76de76;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#fader {
+    position: relative;
+    left: 3px;
+    width: 250px;
+    height: 10px;
+    background: #76de76;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#fader::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #76de76;
+    box-shadow: 0 0 2px #222;
+}
+
+
+.planets__button{
+    margin-top: 30px;
+}
+
+.planets__button button{
+    width: 90px;
+    height: 35px;
+    background: none;      /* Убирает фоновый цвет */
+    border: none;          /* Убирает рамку */
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+.planets__button button:hover{
+    cursor: pointer;
+}
+
+
+.planets__sections {
+    font-family: 'CeraPro-Regular', sans-serif;
+    grid-column: 3/3;
+    align-self: start;
+}
+
+.planets__sections p{
+    padding: 15px;
+    margin-left: 10px;
+    font-size: 18px;
+    border: 1px solid #E5E5E5;
+}
+
+.planets__sections p:hover{
+    font-family: 'CeraPro-Medium', sans-serif;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+.planets__sections img{
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 45px;
+    border: 1px solid #E5E5E5;
+}
+
+.planets__sections img:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+
+/* SUGGESTION */
+
+.suggestion {
+    margin-top: 101px;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 138px;
+}
+.suggestion img{
+    height: 400px;
+}
+.suggestion__text {
+    text-align: end;
+}
+.suggestion__title {
+    font-family: 'CeraPro-Medium', sans-serif;
+    margin-bottom: 20px;
+}
+.suggestion__description {
+    font-family: 'CeraPro-Regular', sans-serif;
+    color: #727272;
+}
+.suggestion__button {
+    margin-top: 30px;
+}
+
+.suggestion__button button{
+    font-family: 'CeraPro-Regular', sans-serif;
+    background: none;      /* Убирает фоновый цвет */
+    border: none;          /* Убирает рамку */
+    width: 100px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: #46A358;
+}
+
+.suggestion__button button:hover{
+    cursor: pointer;
+}
+
+
+/* BLOG */
+
+
+.blog {
+    margin-bottom: 112px;
+}
+
+.blog__text {
+    text-align: center;
+}
+
+.blog__title {
+    font-family: 'CeraPro-Medium', sans-serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.blog__description {
+    font-family: 'CeraPro-Regular', sans-serif;
+    margin-bottom: 35px;
+    color: #727272;
+}
+
+.blog__items {
+    display: grid;
+    grid-template-columns: repeat(4, 268px);
+    justify-content: center;
+    gap: 44px;
+}
+
+.blog__header{
+    font-family: 'CeraPro-Medium', sans-serif;
+}
+
+.blog__date {
+    font-family: 'CeraPro-Regular', sans-serif;
+    color: #46A358;
+}
+
+.blog__button button{
+    font-family: 'CeraPro-Medium', sans-serif;
+    background: none;      /* Убирает фоновый цвет */
+    border: none;          /* Убирает рамку */
+    width: 80px;
+    height: 16px;
+    font-size: 14px;
+    position: relative;
+    color: #3D3D3D;
+}
+
+.blog__button button::after {
+    content: url('../img/icons/blog/arrow-right.svg');
+    position: absolute;
+    right: -15px;
+    top: 2px;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(200%) hue-rotate(120deg) brightness(100%) contrast(100%);
+}
+
+
+.blog__button button:hover{
+    cursor: pointer;
+    color: #46A358;
+}
+
+
+/* FOOTER */
+
+
+.footer{
+    margin-bottom: 27px;
+}
+
+.footer h2{
+    font-family: 'CeraPro-Medium', sans-serif;
+}
+
+.footer p{
+    font-family: 'CeraPro-Regular', sans-serif;
+}
+
+.footer li{
+    font-family: 'CeraPro-Regular', sans-serif;
+    list-style: none;
+}
+
+.footer__blocks {
+    display: grid;
+    grid-template-columns: 204px 204px 204px 354px;
+    grid-gap: 127px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__block img {
+    margin-bottom: 19px;
+}
+
+.footer__description {
+    font-size: 14px;
+    margin-top: 9px;
+    color: #727272;
+}
+
+.footer__input {
+    display: flex;
+    align-items: center;
+}
+
+.footer__input input{
+    width: 354px; 
+    height: 40px;
+    font-size: 14px;
+    padding-left: 11px; 
+    border: none;
+    margin: 18px 0px 17px 0px;
+    box-shadow: 0px 0px 20px #0000000F;
+}
+
+
+.footer__input input:focus{
+    outline: none;
+}
+
+.footer__input button{
+    width: 85px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    background-color: green; 
+    color: white;
+}
+
+.footer__input button:hover{
+    cursor: pointer;
+}
+
+
+.footer__address {
+    position: relative;
+}
+
+.footer__contact {
+    position: relative;
+}
+
+.footer__number {
+    position: relative;
+}
+
+.footer__address p::before{
+    content: url('../img/icons/footer/Location.svg');
+    position: absolute;
+    top: 7px;
+    left: -25px;
+}
+
+.footer__contact p::before{
+    content: url('../img/icons/footer/Message.svg');
+    position: absolute;
+    left: -25px;
+}
+
+.footer__number p::before{
+    content: url('../img/icons/footer/Calling.svg');
+    position: absolute;
+    left: -25px;
+}
+
+.footer__icons img{
+    margin: 20px 0px 33px 17px;
+    padding: 11px;
+    border: 1px solid #46A35833;
+}
+
+.footer__bank img{
+    margin: 13px 0px 0px 17px;
+}
+
+.GreenShop{
+    font-family: 'CeraPro-Regular', sans-serif;
+    padding: 7px 0px 13px 0px;
+    font-size: 10px;
+    border-top: 1px solid #46A35833;
+    text-align: center;
+    color: #3D3D3D;
+}
